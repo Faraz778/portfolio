@@ -6,7 +6,7 @@
 export type Lang = "es" | "en";
 
 export const LANGUAGES: Lang[] = ["es", "en"];
-export const DEFAULT_LANG: Lang = "es";
+export const DEFAULT_LANG: Lang = "en";
 
 type Leaf = Record<Lang, string>;
 type Node = Leaf | { [key: string]: Node };
@@ -30,7 +30,7 @@ export const DICT = {
     aria: { es: "Secciones", en: "Sections" },
     home: { es: "Inicio", en: "Home" },
     stack: { es: "Stack", en: "Stack" },
-    experience: { es: "Experiencia", en: "Experience" },
+    experience: { es: "Education", en: "Education" },
     project: { es: "Proyecto", en: "Project" },
     contact: { es: "Contacto", en: "Contact" },
   },
@@ -43,12 +43,12 @@ export const DICT = {
   hero: {
     greeting: { es: "Hola, soy", en: "Hi, I am" },
     roleLine: {
-      es: "Software Engineer & Tech Lead.",
-      en: "Software Engineer & Tech Lead.",
+      es: "Full Stack .NET Developer.",
+      en: "Full Stack .NET Developer.",
     },
     tagline: {
-      es: "Especializado en ERPs y aplicaciones full-stack para empresas.",
-      en: "Specialised in ERPs and full-stack apps for businesses.",
+      es: "Building modern web applications with .NET and React.",
+      en: "Building modern web applications with .NET and React.",
     },
     cv: { es: "Descargar CV", en: "Download CV" },
     hire: { es: "Contactarme", en: "Contact me" },
@@ -69,11 +69,11 @@ export const DICT = {
       en: "The tools I build with.",
     },
   },
-  experience: {
-    title: { es: "Experience", en: "Experience" },
+   experience: {
+    title: { es: "Education", en: "Education" },
     subtitle: {
-      es: "Mi trayectoria profesional.",
-      en: "My professional journey.",
+      es: "My learning journey.",
+      en: "My learning journey.",
     },
   },
   projects: {
@@ -98,71 +98,71 @@ export const DICT = {
     linkedin: { es: "LinkedIn", en: "LinkedIn" },
     emailToast: { es: "Email copiado", en: "Email copied" },
     footer: {
-      es: "© 2026 Txema Albero. Todos los derechos reservados.",
-      en: "© 2026 Txema Albero. All rights reserved.",
+      es: "© 2026 Muhammad Faraz. All rights reserved.",
+      en: "© 2026 Muhammad Faraz. All rights reserved.",
     },
   },
-  keyboard: {
+    keyboard: {
     taglines: {
-      javascript: {
-        es: "Donde empezó todo. Sigue aquí, sigue mandando.",
-        en: "Where it all started. Still here, still in charge.",
+      dotnet: {
+        es: "One platform, from APIs to full web apps.",
+        en: "One platform, from APIs to full web apps.",
       },
-      typescript: {
-        es: "Mismo JS, con cinturón de seguridad.",
-        en: "Same JS, with a seatbelt.",
+      csharp: {
+        es: "Strongly typed and surprisingly pleasant to write.",
+        en: "Strongly typed and surprisingly pleasant to write.",
       },
-      html5: {
-        es: "Los huesos de cualquier página.",
-        en: "The bones of any page.",
+      aspnetcore: {
+        es: "Fast, structured web apps and APIs on .NET.",
+        en: "Fast, structured web apps and APIs on .NET.",
       },
-      css: {
-        es: "El detalle que separa lo bueno de lo bonito.",
-        en: "What separates good from beautiful.",
+      efcore: {
+        es: "Entity Framework Core: C# objects in, database rows out.",
+        en: "Entity Framework Core: C# objects in, database rows out.",
       },
-      tailwindcss: {
-        es: "Utility-first. Diseño en el HTML.",
-        en: "Utility-first. Design inside the HTML.",
-      },
-      python: {
-        es: "Se lee como inglés, escala como cohete.",
-        en: "Reads like English, scales like a rocket.",
+      sqlserver: {
+        es: "Where the data lives, waiting for a well-written query.",
+        en: "Where the data lives, waiting for a well-written query.",
       },
       react: {
-        es: "Componentes, componentes, componentes.",
+        es: "Components, components, components.",
         en: "Components, components, components.",
       },
-      nextdotjs: {
-        es: "React adulto: routing, SSR, edge.",
-        en: "React all grown up: routing, SSR, edge.",
+      javascript: {
+        es: "Where it all started. Still here, still in charge.",
+        en: "Where it all started. Still here, still in charge.",
       },
-      vuedotjs: {
-        es: "El frontend más relajado.",
-        en: "The most relaxed frontend.",
+      html5: {
+        es: "The bones of any page.",
+        en: "The bones of any page.",
       },
-      nodedotjs: {
-        es: "JavaScript en el servidor.",
-        en: "JavaScript on the server.",
+      css3: {
+        es: "What separates good from beautiful.",
+        en: "What separates good from beautiful.",
       },
-      php: {
-        es: "Mueve más web de la que crees.",
-        en: "Runs more of the web than you think.",
-      },
-      odoo: {
-        es: "ERP que no hace llorar.",
-        en: "ERP that doesn't make you cry.",
-      },
-      postgresql: {
-        es: "La base de datos aburrida que siempre funciona.",
-        en: "The boring database that always works.",
-      },
-      docker: {
-        es: "Igual en mi máquina, igual en producción.",
-        en: "Same on my machine, same in production.",
+      bootstrap: {
+        es: "Responsive layouts, fast.",
+        en: "Responsive layouts, fast.",
       },
       git: {
-        es: "Historia y máquina del tiempo del código.",
+        es: "History and a time machine for your code.",
         en: "History and a time machine for your code.",
+      },
+      github: {
+        es: "Where the code lives and gets shared.",
+        en: "Where the code lives and gets shared.",
+      },
+      restapi: {
+        es: "Clear endpoints, predictable JSON.",
+        en: "Clear endpoints, predictable JSON.",
+      },
+      linq: {
+        es: "Query collections in C# without writing the loops.",
+        en: "Query collections in C# without writing the loops.",
+      },
+      postman: {
+        es: "Test every endpoint before the frontend does.",
+        en: "Test every endpoint before the frontend does.",
       },
     },
   },

@@ -7,7 +7,6 @@ import Reveal from "@/components/Reveal";
 import SectionNav from "@/components/SectionNav";
 import CopyEmail from "@/components/CopyEmail";
 import SeasonPicker from "@/components/SeasonPicker";
-import LanguagePicker from "@/components/LanguagePicker";
 import ProjectModal, {
   type ProjectDetail,
 } from "@/components/ProjectModal";
@@ -16,7 +15,9 @@ import { useIsMobile } from "@/lib/useIsMobile";
 import { SKILLS_FLAT } from "@/lib/skills";
 import type { Lang } from "@/lib/i18n";
 
-const EMAIL = "josemariaalberobelamendia@gmail.com";
+const EMAIL = "arbazfaraz69@gmail.com";
+const GITHUB_URL = "https://github.com/Faraz778/";
+const LINKEDIN_URL = "https://www.linkedin.com/in/muhammad-faraz-dotnet/";
 
 // Localised content lives in `{ es, en }` objects inside these arrays so the
 // page can be a straightforward array.map() at render time. Tech names stay
@@ -31,146 +32,143 @@ type Project = ProjectDetail & {
 const projects: Project[] = [
   {
     num: "01",
-    name: {
-      es: "Contestador IA de Reseñas Google",
-      en: "AI Responder for Google Reviews",
+      name: {
+      es: "NovaStore",
+      en: "NovaStore",
     },
     stack: [
-      "Next.js",
-      "FastAPI",
-      "Python",
-      "PostgreSQL",
-      "Supabase",
-      "Claude API",
-      "Stripe",
-      "Celery",
+      "ASP.NET Core",
+      "C#",
+      "EF Core",
+      "SQL Server",
+      "JWT",
+      "React 19",
+      "Vite",
+      "Axios",
     ],
     desc: {
-      es: "SaaS que genera respuestas personalizadas a reseñas de Google Business Profile con IA, manteniendo el tono de la marca.",
-      en: "SaaS that generates personalised replies to Google Business Profile reviews with AI while keeping the brand tone.",
+      es: "Full-stack e-commerce app: ASP.NET Core Web API with a React storefront and an admin panel for products, categories and orders.",
+      en: "Full-stack e-commerce app: ASP.NET Core Web API with a React storefront and an admin panel for products, categories and orders.",
     },
     details: {
-      es: "Plataforma orientada a negocios locales en España para gestionar sus reseñas de Google Business Profile. El sistema hace polling cada 15 minutos, llama a Claude para generar respuestas alineadas con el tono de marca y las publica automáticamente (o las manda a revisión). Incluye Stripe con suscripciones y Customer Portal, autenticación con Google OAuth + PKCE, alertas por email/SMS para reseñas negativas y un dashboard con métricas.",
-      en: "A platform for local businesses in Spain to manage their Google Business Profile reviews. The system polls every 15 minutes, uses Claude to draft replies in the brand's tone and publishes them automatically (or sends them to review). Stripe handles subscriptions and Customer Portal, auth is Google OAuth with PKCE, and negative reviews fire email/SMS alerts. Dashboard with metrics included.",
+      es: "A full-stack e-commerce app built with an ASP.NET Core Web API (.NET 10) and a React 19 frontend. Customers can browse products with search, price sorting and category filters, keep a cart that survives refreshes, check out with validated delivery details, and track or cancel pending orders. Admins get a dedicated panel to manage products, categories and orders (Pending, Shipped, Delivered), and to see users and newsletter subscribers. On the backend: JWT authentication with Admin and Customer roles, hashed passwords, stock that is reduced when an order is placed and restored on cancellation, and each order item keeps the price paid at purchase time. Data lives in SQL Server through EF Core code-first migrations.",
+      en: "A full-stack e-commerce app built with an ASP.NET Core Web API (.NET 10) and a React 19 frontend. Customers can browse products with search, price sorting and category filters, keep a cart that survives refreshes, check out with validated delivery details, and track or cancel pending orders. Admins get a dedicated panel to manage products, categories and orders (Pending, Shipped, Delivered), and to see users and newsletter subscribers. On the backend: JWT authentication with Admin and Customer roles, hashed passwords, stock that is reduced when an order is placed and restored on cancellation, and each order item keeps the price paid at purchase time. Data lives in SQL Server through EF Core code-first migrations.",
     },
-    url: "https://revio.txemaalbero.com/",
+       github: "https://github.com/Faraz778/ECommerceApi",
     media: [
-      "/projects/revio/landing.png",
-      "/projects/revio/dashboard.png",
-      "/projects/revio/alertas.png",
-      "/projects/revio/analiticas.png",
-      "/projects/revio/negocios.png",
-      "/projects/revio/analiticas-ia.png",
+      "/projects/novastore/home.png",
+      "/projects/novastore/product.png",
+      "/projects/novastore/cart.png",
+      "/projects/novastore/login.png",
+      "/projects/novastore/admin-dashboard.png",
+      "/projects/novastore/admin-products.png",
     ],
-    highlights: ["nextdotjs", "tailwindcss", "python", "postgresql"],
+    highlights: ["csharp", "aspnetcore", "efcore", "sqlserver", "react", "restapi"],
     align: "left",
     section: "project1",
   },
   {
     num: "02",
-    name: {
-      es: "Control de Temperaturas APPCC",
-      en: "HACCP Temperature Control",
+        name: {
+      es: "Real Estate Portal",
+      en: "Real Estate Portal",
     },
     stack: [
-      "Next.js 16",
-      "FastAPI",
-      "Python",
-      "PostgreSQL",
-      "Supabase",
-      "Claude API",
-      "Stripe",
-      "Celery",
+      "ASP.NET Core MVC",
+      "C#",
+      "EF Core",
+      "SQL Server",
+      "Razor",
+      "Bootstrap 5",
     ],
     desc: {
-      es: "App para restaurantes que digitaliza el registro de temperaturas APPCC y genera planes e informes automáticos para inspecciones sanitarias.",
-      en: "App for restaurants that digitises HACCP temperature logs and auto-generates plans and reports for food safety inspections.",
+      es: "ASP.NET Core MVC real estate portal with separate Admin, Agent and Private Seller panels, listing approval and advanced property search.",
+      en: "ASP.NET Core MVC real estate portal with separate Admin, Agent and Private Seller panels, listing approval and advanced property search.",
     },
     details: {
-      es: "Digitaliza el control APPCC completo de un restaurante: registros de temperatura, trazabilidad, alérgenos y generación asistida por IA de los planes HACCP. Integración con Open Food Facts para importar alérgenos, MFA en la autenticación, multi-idioma con next-intl y pagos por suscripción con Stripe. Backend 100% async con FastAPI + SQLAlchemy y tareas en Celery.",
-      en: "Full HACCP digitisation for a restaurant: temperature logs, traceability, allergens, and AI-assisted generation of HACCP plans. Integrates with Open Food Facts for allergens, MFA-protected auth, i18n with next-intl, subscription billing with Stripe. Fully async backend with FastAPI + SQLAlchemy and Celery workers.",
+      es: "An online real estate portal built with ASP.NET Core MVC (.NET 10) and SQL Server, with three separate panels for Admin, Agent and Private Seller. Login is session-based with role-based access control. Agents and private sellers post property ads with images, and every new listing starts as Pending until an admin approves or rejects it. Admins also manage users, categories and cities, and get a dashboard with listing counts. Visitors can search approved listings by keyword, city, category, purpose and seller type, and open a detail page for each property. The database is managed with EF Core Code First migrations and the UI uses Bootstrap 5.",
+      en: "An online real estate portal built with ASP.NET Core MVC (.NET 10) and SQL Server, with three separate panels for Admin, Agent and Private Seller. Login is session-based with role-based access control. Agents and private sellers post property ads with images, and every new listing starts as Pending until an admin approves or rejects it. Admins also manage users, categories and cities, and get a dashboard with listing counts. Visitors can search approved listings by keyword, city, category, purpose and seller type, and open a detail page for each property. The database is managed with EF Core Code First migrations and the UI uses Bootstrap 5.",
     },
-    url: "https://aptia.txemaalbero.com/",
+        github: "https://github.com/Faraz778/RealEstatePortal",
     media: [
-      "/projects/aptia/landing.png",
-      "/projects/aptia/panel.png",
-      "/projects/aptia/registros.png",
-      "/projects/aptia/carta-alergenos.png",
-      "/projects/aptia/inspeccion.png",
-      "/projects/aptia/cuestionario.png",
+      "/projects/real-estate/home.png",
+      "/projects/real-estate/search.png",
+      "/projects/real-estate/details.png",
+      "/projects/real-estate/admin-dashboard.png",
+      "/projects/real-estate/agent-add-property.png",
+      "/projects/real-estate/seller-dashboard.png",
     ],
-    highlights: ["nextdotjs", "tailwindcss", "python", "postgresql", "typescript"],
-    badge: { es: "En desarrollo", en: "In progress" },
+    highlights: ["csharp", "aspnetcore", "efcore", "sqlserver", "bootstrap"],
     align: "right",
     section: "project2",
   },
   {
     num: "03",
-    name: {
-      es: "Gestor de Finanzas Personales",
-      en: "Personal Finance Tracker",
+        name: {
+      es: "Star Security Services",
+      en: "Star Security Services",
     },
     stack: [
-      "Django",
-      "Python",
-      "SQLite",
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "Chart.js",
-      "pandas",
+      "ASP.NET Core MVC",
+      "C#",
+      "EF Core",
+      "SQL Server",
+      "Razor",
+      "Bootstrap 5",
     ],
     desc: {
-      es: "Dashboard para seguimiento de ingresos, gastos y objetivos de ahorro con visualizaciones gráficas, importación desde Excel e informes mensuales.",
-      en: "Dashboard to track income, expenses and savings goals with visual charts, Excel import and monthly reports.",
+      es: "Corporate website for a security services company with a role-protected Admin Panel for employees, clients, vacancies and services.",
+      en: "Corporate website for a security services company with a role-protected Admin Panel for employees, clients, vacancies and services.",
     },
     details: {
-      es: "Aplicación Django clásica (MVT) para finanzas personales: categorización de gastos, objetivos de ahorro, importación masiva desde Excel (xlsx/xls) y gráficos con Chart.js. Temas claro/oscuro hechos con CSS puro y sin dependencias frontend. Un proyecto que prioriza simplicidad y robustez: sin frameworks en el cliente, autenticación nativa de Django, base de datos SQLite.",
-      en: "Classic Django (MVT) app for personal finance: expense categorisation, savings goals, bulk import from Excel (xlsx/xls) and Chart.js-powered graphs. Light/dark themes in pure CSS with zero frontend dependencies. A project that favours simplicity and robustness: no client framework, Django's built-in auth, SQLite storage.",
+      es: "A corporate website for a security services company, built with ASP.NET Core MVC (.NET 10) and SQL Server. The public site covers the company, its services, network, testimonials, careers and contact pages, and the Careers page lists only vacancies that are still open. Login is session-based with Admin and Employee roles: admins get full CRUD for employees, clients, vacancies and services, while employees get their own profile and employee list and detail pages. Data access uses Entity Framework Core with the DB First approach, and the interface is built with Bootstrap 5.",
+      en: "A corporate website for a security services company, built with ASP.NET Core MVC (.NET 10) and SQL Server. The public site covers the company, its services, network, testimonials, careers and contact pages, and the Careers page lists only vacancies that are still open. Login is session-based with Admin and Employee roles: admins get full CRUD for employees, clients, vacancies and services, while employees get their own profile and employee list and detail pages. Data access uses Entity Framework Core with the DB First approach, and the interface is built with Bootstrap 5.",
     },
-    github: "https://github.com/Txemalon/Gestor-de-gastos-personales",
+    github: "https://github.com/Faraz778/StarSecurityServices",
     media: [
-      "/projects/gestor-gastos/dashboard.png",
-      "/projects/gestor-gastos/wallets.png",
-      "/projects/gestor-gastos/transacciones.png",
-      "/projects/gestor-gastos/categorias.png",
-      "/projects/gestor-gastos/reportes.png",
-      "/projects/gestor-gastos/inversiones.png",
+      "/projects/star-security/home.png",
+      "/projects/star-security/services.png",
+      "/projects/star-security/careers.png",
+      "/projects/star-security/admin-dashboard.png",
+      "/projects/star-security/admin-employees.png",
+      "/projects/star-security/admin-add-vacancy.png",
     ],
-    highlights: ["python", "javascript", "html5", "css"],
+    highlights: ["csharp", "aspnetcore", "efcore", "sqlserver", "bootstrap"],
     align: "left",
     section: "project3",
   },
   {
     num: "04",
-    name: {
-      es: "Tienda online de dianas",
-      en: "Dartboards e-commerce",
+        name: {
+      es: "Symphony Institute Portal",
+      en: "Symphony Institute Portal",
     },
     stack: [
-      "Next.js 15",
-      "React",
-      "TypeScript",
-      "Prisma",
-      "PostgreSQL",
-      "NextAuth",
-      "Stripe",
-      "Framer Motion",
+      "ASP.NET Core MVC",
+      "C#",
+      "EF Core",
+      "SQL Server",
+      "Razor",
+      "Bootstrap 5",
     ],
     desc: {
-      es: "E-commerce moderno para venta de dianas con pagos integrados, autenticación social, panel de administración y animaciones fluidas.",
-      en: "Modern e-commerce for dartboards with integrated payments, social auth, an admin panel and smooth animations.",
+      es: "Website and Admin Panel for an IT training institute: courses, entrance exams, online applications and exam results lookup.",
+      en: "Website and Admin Panel for an IT training institute: courses, entrance exams, online applications and exam results lookup.",
     },
     details: {
-      es: "Tienda online completa con catálogo, carrito y checkout con Stripe. NextAuth con Google OAuth y credenciales, rate limiting con Upstash Redis, validación con Zod y un panel de administración separado (AdminJS sobre Express, puerto 3001). Transiciones y microinteracciones con Framer Motion para darle un acabado más premium que una tienda al uso.",
-      en: "A full e-commerce with catalogue, cart and Stripe checkout. NextAuth with Google OAuth and credentials, Upstash Redis for rate limiting, Zod validation, and a separate admin panel (AdminJS on Express, port 3001). Framer Motion powers transitions and micro-interactions for a more premium feel than a typical shop.",
+      es: "A web application for an IT training institute, built with ASP.NET Core MVC (.NET 10) and SQL Server. The public site presents courses, entrance exams, FAQs, about and contact pages, lets applicants submit an online application (stored as Pending), and lets students look up their exam result by roll number. A session-based Admin Panel manages courses, entrance exams, exam results, FAQs, branches and students, including viewing student details and updating an application's status. Data access uses Entity Framework Core Code First with migrations, and the interface is built with Bootstrap 5.",
+      en: "A web application for an IT training institute, built with ASP.NET Core MVC (.NET 10) and SQL Server. The public site presents courses, entrance exams, FAQs, about and contact pages, lets applicants submit an online application (stored as Pending), and lets students look up their exam result by roll number. A session-based Admin Panel manages courses, entrance exams, exam results, FAQs, branches and students, including viewing student details and updating an application's status. Data access uses Entity Framework Core Code First with migrations, and the interface is built with Bootstrap 5.",
     },
+    github: "https://github.com/Faraz778/SymphonyPortal",
     media: [
-      "/projects/dianas/packs.png",
-      "/projects/dianas/catalogo.png",
+      "/projects/symphony/home.png",
+      "/projects/symphony/courses.png",
+      "/projects/symphony/apply.png",
+      "/projects/symphony/results.png",
+      "/projects/symphony/admin-dashboard.png",
+      "/projects/symphony/admin-courses.png",
     ],
-    highlights: ["nextdotjs", "react", "typescript", "tailwindcss", "postgresql"],
-    badge: { es: "En construcción", en: "Under construction" },
+    highlights: ["csharp", "aspnetcore", "efcore", "sqlserver", "bootstrap"],
     align: "right",
     section: "project4",
   },
@@ -186,33 +184,49 @@ const experiences: Array<{
   stack: string[];
 }> = [
   {
-    role: { es: "Tech Lead", en: "Tech Lead" },
-    company: "Activalink",
-    period: { es: "2023 — Presente", en: "2023 — Present" },
-    location: { es: "Alcoy, España", en: "Alcoy, Spain" },
+    role: {
+      es: "Diploma in Software Engineering",
+      en: "Diploma in Software Engineering",
+    },
+    company: "Aptech Metro Karachi",
+    period: { es: "Oct 2024 — Oct 2026", en: "Oct 2024 — Oct 2026" },
+    location: { es: "Karachi, Pakistan", en: "Karachi, Pakistan" },
     summary: {
-      es: "Activalink implementa y adapta ERPs para pymes y grandes empresas. Desarrollo módulos y personalizaciones custom sobre Odoo, integraciones a medida y proyectos de implantación llave en mano. Lidero un equipo de 3 desarrolladores: nuestro trabajo se mide en tiempo ahorrado y errores evitados.",
-      en: "Activalink implements and customises ERPs for SMBs and large companies. I build custom modules and personalisations on top of Odoo, bespoke integrations, and end-to-end implementation projects. I lead a team of 3 developers: our work is measured in time saved and errors avoided.",
+      es: "Two-year diploma at Aptech Metro Karachi covering front-end, back-end and database development across several technology stacks.",
+      en: "Two-year diploma at Aptech Metro Karachi covering front-end, back-end and database development across several technology stacks.",
     },
     bullets: [
       {
-        es: "OCR de facturas en Odoo — de 4 h/día a 30 min (−87 %).",
-        en: "Invoice OCR in Odoo — from 4 h/day down to 30 min (−87 %).",
+        es: "Front-end foundations: HTML, CSS and JavaScript.",
+        en: "Front-end foundations: HTML, CSS and JavaScript.",
       },
       {
-        es: "Logística con mapa interactivo — −60 % errores de seguimiento.",
-        en: "Interactive logistics map — −60 % tracking errors.",
+        es: "PHP with Laravel and MySQL for server-side web applications.",
+        en: "PHP with Laravel and MySQL for server-side web applications.",
       },
       {
-        es: "Conciliación automática — cierre contable de 3 días a medio día.",
-        en: "Automated reconciliation — monthly close from 3 days to half a day.",
+        es: "C# and .NET with SQL Server, the stack behind all my portfolio projects.",
+        en: "C# and .NET with SQL Server, the stack behind all my portfolio projects.",
       },
       {
-        es: "Dashboards financieros — detección temprana de facturas sin emitir.",
-        en: "Financial dashboards — early detection of uninvoiced orders.",
+        es: "React, Express and MongoDB for full-stack JavaScript applications.",
+        en: "React, Express and MongoDB for full-stack JavaScript applications.",
       },
     ],
-    stack: ["Odoo", "Python", "PostgreSQL", "Next.js", "TypeScript", "Docker"],
+    stack: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "C#",
+      ".NET",
+      "SQL Server",
+      "React",
+      "Express",
+      "MongoDB",
+    ],
   },
 ];
 
@@ -262,7 +276,7 @@ export default function Home() {
               data-cursor="hover"
               className="text-sm font-semibold tracking-tight text-ice-100 whitespace-nowrap"
             >
-              Txema Albero
+             Muhammad Faraz
             </span>
             {/* Wrapper (not the pill itself) carries the hide: .status-pill
                 hard-sets display:inline-flex, which beats Tailwind's .hidden
@@ -275,7 +289,7 @@ export default function Home() {
             <SeasonPicker />
             <span className="hidden md:inline-flex">
             <a
-              href="https://github.com/Txemalon/3d-portfolio"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="hover"
@@ -287,7 +301,6 @@ export default function Home() {
               <span>GitHub</span>
             </a>
             </span>
-            <LanguagePicker />
           </div>
         </header>
 
@@ -313,10 +326,10 @@ export default function Home() {
               >
                 {t("hero.greeting")}
               </p>
-              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-bold tracking-[-0.03em] text-ice-50 leading-[0.92] whitespace-nowrap">
-                <HeroWord text="Txema" delay={120} />
+              <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] font-bold tracking-[-0.03em] text-ice-50 leading-[0.92] whitespace-nowrap">
+                <HeroWord text="Muhammad" delay={120} />
                 <br />
-                <HeroWord text="Albero" delay={260} className="text-ice-400" />
+                <HeroWord text="Faraz" delay={260} className="text-ice-400" />
               </h1>
               <p
                 className="mt-8 text-base sm:text-lg md:text-xl text-ice-200 max-w-xl leading-relaxed fade-in-up"
@@ -366,7 +379,7 @@ export default function Home() {
                     so desktop keeps everything on a single line. */}
                 <div className="basis-full h-0 md:hidden" aria-hidden />
                 <a
-                  href="https://es.linkedin.com/in/jose-mar%C3%ADa-albero-belamendia-b9319a246"
+                  href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor="hover"
@@ -379,7 +392,7 @@ export default function Home() {
                   </svg>
                 </a>
                 <a
-                  href="https://github.com/Txemalon"
+                  href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor="hover"
@@ -691,7 +704,7 @@ export default function Home() {
                     {t("contact.openMail")}
                   </a>
                   <a
-                    href="https://github.com/Txemalon"
+                    href={GITHUB_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     data-cursor="hover"
@@ -700,7 +713,7 @@ export default function Home() {
                     {t("contact.github")}
                   </a>
                   <a
-                    href="https://es.linkedin.com/in/jose-mar%C3%ADa-albero-belamendia-b9319a246"
+                    href={LINKEDIN_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     data-cursor="hover"
