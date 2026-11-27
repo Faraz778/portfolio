@@ -3,6 +3,7 @@
 Personal portfolio of **Muhammad Faraz**, a Full Stack .NET Developer from Karachi, Pakistan. It is an interactive 3D site built with **Next.js**, **React Three Fiber** and **Tailwind CSS**, based on an open-source template (see [Credits](#credits)).
 
 **Live site:** [faraz-dotnet.vercel.app](https://faraz-dotnet.vercel.app)
+
 **Contact:** [arbazfaraz69@gmail.com](mailto:arbazfaraz69@gmail.com) · [LinkedIn](https://www.linkedin.com/in/muhammad-faraz-dotnet/) · [GitHub](https://github.com/Faraz778)
 
 ---
